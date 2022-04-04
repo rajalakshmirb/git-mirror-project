@@ -7,12 +7,12 @@ build:
     script:
         - echo "Building"
         - mkdir build1
-        - touch build/info.txt
+        - touch build1/info.txt
     artifacts:
         paths:
-            - build/
+            - build1/
 test:
     stage: test
     script:
         - echo "testing1"
-        - test -f "build/info.txt"
+        - test -f "build1/info.txt"
