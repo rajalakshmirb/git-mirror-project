@@ -1,7 +1,18 @@
-job1:
-    script:
-        - echo "This is a first sample job"
-job2:
-    script:
-        - echo "This is a second job"
+stages:
+    - build
+    - test
 
+build:
+    stage: build
+    script:
+        - echo "Building"
+        - mkdir build
+        - touch build/info.txt
+    artifacts:
+        paths:
+            - build/
+test:
+    stage: test
+    script:
+        - echo "testing"
+        - test -f "build/info.txt"
